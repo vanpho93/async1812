@@ -34,8 +34,27 @@ function chia(a, b) {
     });
 }
 
-cong(4, 5)
-.then(result => console.log(x))
-.catch(err => console.log(q))
-.catch(err => console.log(err))
-.then(a => console.log(a));
+async function tinhDienTich(a, b, h) {
+    const tong = await cong(a, b);
+    const tich = await nhan(tong, h);
+    const kq = await chia(tich, 2);
+    return kq;
+}
+
+const start = Date.now();
+
+// tinhDienTich(4, 5, 6)
+// .then(kq => {
+//     console.log(kq);
+//     console.log(Date.now() - start);
+// })
+// .catch(err => console.log(err));
+
+// (4 + 5) * 6 / 2
+Promise.all([ cong(4, 5), chia(6, 2)])
+.then(results => nhan(results[0], results[1]))
+.then(kq => {
+    console.log(kq);
+    console.log(Date.now() - start);
+})
+.catch(err => console.log(err));

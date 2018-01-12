@@ -11,7 +11,7 @@ app.use((req, res, next) => {
 app.get('/tinh/:tenPhepTinh/:soA/:soB', (req, res) => {
     const { tenPhepTinh, soA, soB } = req.params;
     const pt = new PhepTinh(soA, soB, tenPhepTinh);
-    res.send(pt.getResult() + '');
+    setTimeout(() => res.send(pt.getResult() + ''), 1000);
 });
 
 app.listen(3000);

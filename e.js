@@ -33,14 +33,10 @@ function chia(a, b) {
         });
     });
 }
-// (4 + 5) * 6 / 2
 
-function tinhDienTich(a, b, h) {
-    return cong(a, b)
-    .then(tong => nhan(tong, h))
-    .then(tich => chia(tich, 2))
-}
-
-tinhDienTich(4, 5, 12)
-.then(kq => console.log(kq))
-.catch(err => console.log(err))
+cong(4, 5)
+.then(result => {
+    console.log('Xong 2')
+    return 10;
+})
+.then(x => console.log(x));

@@ -35,8 +35,7 @@ function chia(a, b) {
 }
 
 cong(4, 5)
-.then(result => {
-    console.log('Xong 2')
-    return 10;
-})
-.then(x => console.log(x));
+.then(result => console.log(x))
+.catch(err => console.log(q))
+.catch(err => console.log(err))
+.then(a => console.log(a));
